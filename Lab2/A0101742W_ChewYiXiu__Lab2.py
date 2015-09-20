@@ -4,7 +4,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 #return a grayscale image 
-img = cv2.imread('/Pictures/pic4.jpg',cv2.CV_LOAD_IMAGE_GRAYSCALE)
+img = cv2.imread(os.getcwd() + '/Pictures/pic4.jpg',cv2.CV_LOAD_IMAGE_GRAYSCALE)
 #return values of histogram for img
 hist,bins = np.histogram(img.flatten(),256,[0,256])
 #cummulative sum for histogram value
@@ -51,4 +51,4 @@ plt.show()
 
 #left image is before, right image is after histogram equalisation
 result = np.hstack((img,img1))
-cv2.imwrite("pic4BeforeAfter.jpg",result)
+cv2.imwrite(os.getcwd() + "/Results/pic4BeforeAfter.jpg",result)
